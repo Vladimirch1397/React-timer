@@ -10,8 +10,9 @@ export default class Timer extends React.Component {
             hours: props.hours,
             minutes: props.minutes,
             seconds: props.seconds,
-            interval: 1000,
         };
+
+        this.interval = 1000;
 
         let timestamp = this.timeToSeconds();
 
@@ -44,7 +45,7 @@ export default class Timer extends React.Component {
             if (counter === 0) {
                 clearInterval(timerId);
             }
-        }, this.state.interval);
+        }, this.interval);
     }
 
     converToStr(time, func) {
